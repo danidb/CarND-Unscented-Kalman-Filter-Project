@@ -48,7 +48,7 @@ pl <- ggplot(data=pl.data) +
         legend.text = element_text(size=20),
         legend.background = element_blank(),
         legend.key = element_blank()) + 
-  ggtitle("Extended Kalman Filter (position)") +
+  ggtitle("Unscented Kalman Filter (position)") +
   annotate("text", label=paste("RMSE: [", paste(round(rmse, 3), collapse=", "),  "]", sep=" "),
            x=10, y=-4, size=8) + 
   labs(x="x position", y="y position")
