@@ -7,6 +7,9 @@ The Unscented Kalman Filter is applied to the sample data provided by Udacity. T
 
 ![UKF Results.](sample-data-output.png)
 
+The normalized innovation squared (NIS) is plotted below. A 95% bound based on the Chi-Squared distribution (3 degrees of freedom) is drawn horizontally in red. 
+
+![UKF Results.](sample-data-NIS.png)
 
 ## Dependencies
 

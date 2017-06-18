@@ -58,3 +58,33 @@ png("sample-data-output.png", width=1024, height=1024)
 pl
 dev.off()
 
+## Plot the NIS.
+pl.data <- data.frame("x" = 0:(N-1),
+                      "y" = outfile[,'NIS'])
+pl <- ggplot(data = pl.data) +
+  geom_point(aes(x, y), col = "darkgray") +
+  theme(axis.line = element_blank(),
+        panel.grid.major = element_line(colour="lightgray"),
+        panel.grid.minor = element_line(colour="lightgray"),
+        panel.border = element_blank(),
+        panel.background = element_rect(fill="white"),
+        text = element_text(size=30),
+        legend.title=element_blank(),
+        legend.text = element_text(size=20),
+        legend.background = element_blank(),
+        legend.key = element_blank()) + 
+  ggtitle("Unscented Kalman Filter NIS") +
+  labs(x = "Timestep (s)", y = "NIS") +
+  ylim(c(0,20)) +
+  geom_hline(yintercept = 7.815, color = 'red') +
+  annotate("segment", x = 75, y = 10, xend = 75, yend = 7.815, col = 'red', arrow = arrow()) + 
+  annotate("text", label = "ChiSq NIS 95%", x = 75, y = 10.5 ,size = 5)
+
+
+
+
+png("sample-data-NIS.png", width=1024, height=512)
+pl
+dev.off()
+
+                      
